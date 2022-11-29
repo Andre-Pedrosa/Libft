@@ -1,51 +1,34 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marmonte <marmonte@student.42lisboa.com    +#+  +:+       +#+         #
+#    By: apedrosa <apedrosa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/31 17:18:18 by marmonte          #+#    #+#              #
-#    Updated: 2022/10/31 17:18:18 by marmonte         ###   ########.fr        #
+#    Created: 2022/11/16 17:11:38 by apedrosa          #+#    #+#              #
+#    Updated: 2022/11/16 17:11:38 by apedrosa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
 NAME = libft.a
+SRC = ft_memset ft_bzero ft_memcpy ft_memmove ft_memchr\
+ft_memcmp ft_strlen ft_strlcpy ft_strlcat ft_strchr ft_strrchr\
+ft_strncmp ft_atoi ft_isalpha ft_isdigit ft_isalnum\
+ft_isascii ft_isprint ft_toupper ft_tolower ft_calloc ft_strdup\
+ft_substr ft_strjoin ft_strnstr ft_split ft_strtrim ft_itoa\
+ft_strmapi ft_striteri ft_putchar_fd ft_putstr_fd ft_putendl_fd\
+ft_putnbr_fd\
 
-CC = clang
+CC =cc
+RM =rm -f
+CFLAGS = -Wall -Werror -Wextra
 
-CFLAGS = -Wall -Wextra -Werror -I .
+all:$(NAME)
 
-RM = rm -f
-
-SRC = $(wildcard *.c)
-
-OBJ = $(SRC:.c=.o)
-
-#B = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
-#ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
-
-#B = $(wildcard *.c)
-
-B_OBJ = $(B:.c=.o)
-
-all:	$(NAME)
-
-bonus:	$(B_OBJ)
-			ar rcs $(NAME) $(B_OBJ)
-
-$(NAME):	$(OBJ)
-			ar rcs $(NAME) $(OBJ)
-
+$(NAME): $(SRC:=.o)
+			ar rc $(NAME) $(SRC:=.o)
 clean:
-			$(RM) $(OBJ) $(B_OBJ)
-
-fclean:	clean
-			$(RM) $(NAME)
-
-re:	fclean $(NAME)
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	clang -nostartfiles -shared -o libft.so $(OBJ)
+	$(RM)	$(SRC:=.o)
+fclean: clean
+		$(RM)	$(NAME)
+re:	fclean	$(NAME)

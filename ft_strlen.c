@@ -6,16 +6,18 @@
 /*   By: apedrosa <apedrosa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:38:29 by apedrosa          #+#    #+#             */
-/*   Updated: 2022/10/26 20:29:33 by apedrosa         ###   ########.fr       */
+/*   Updated: 2022/11/23 12:51:57 by apedrosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-	int		i;
+	size_t	i;
 
 	i = 0;
-	while (str[i])
+	while (s[i])
 		i++;
 	return (i);
 }
