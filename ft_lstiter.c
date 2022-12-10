@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apedrosa <apedrosa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 21:43:15 by apedrosa          #+#    #+#             */
-/*   Updated: 2022/12/10 14:00:42 by apedrosa         ###   ########.fr       */
+/*   Created: 2022/12/06 18:30:38 by apedrosa          #+#    #+#             */
+/*   Updated: 2022/12/06 18:32:37 by apedrosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	write(fd, &c, 1);
+	if (!lst)
+		return ;
+	while (lst)
+	{
+		f(lst ->content);
+		lst = lst ->next;
+	}
 }

@@ -6,13 +6,13 @@
 /*   By: apedrosa <apedrosa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 20:35:22 by apedrosa          #+#    #+#             */
-/*   Updated: 2022/12/05 20:41:30 by apedrosa         ###   ########.fr       */
+/*   Updated: 2022/12/06 15:23:45 by apedrosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	size_t	i;
 
