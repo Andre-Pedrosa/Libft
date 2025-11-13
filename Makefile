@@ -6,7 +6,7 @@
 #    By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/22 17:15:21 by atomas-p          #+#    #+#              #
-#    Updated: 2025/11/13 14:10:31 by atomas-p         ###   ########.fr        #
+#    Updated: 2025/11/13 14:31:25 by atomas-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,9 @@ re: fclean all
 #leaks: $(SRC) $(BONUS)
 #	$(CC) $(CFLAGS) -g $^ -o leak_check
 #	valgrind --leak-check=full --show-leak-kinds=all ./leak_check
+run: $(SRC) $(BONUS)
+	$(CC) $(CFLAGS) $^ -o 42
+	./42
 # Automatic variables used in this Makefile:
 # $@ - the target file name (e.g., the .o or .a file being built)
 # $< - the first prerequisite (e.g., the source .c file being compiled)
