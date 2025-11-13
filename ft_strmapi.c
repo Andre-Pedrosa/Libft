@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedrosa7704 <pedrosa7704@student.42.fr>    +#+  +:+       +#+        */
+/*   By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 13:42:02 by atomas-p          #+#    #+#             */
-/*   Updated: 2025/11/08 21:38:05 by pedrosa7704      ###   ########.fr       */
+/*   Updated: 2025/11/13 16:12:20 by atomas-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,23 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
+/* 
+#include <stdio.h>
+
+static char	helper(unsigned int i, char c)
+{
+	(void)i;
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
+}
+
+int main()
+{
+	char *str = "ola";
+	char *result = ft_strmapi(str, helper);
+
+	printf("%s\n", result);
+	free(result);
+}
+ */
