@@ -6,7 +6,7 @@
 /*   By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 16:25:48 by pedrosa7704       #+#    #+#             */
-/*   Updated: 2025/11/03 10:59:33 by atomas-p         ###   ########.fr       */
+/*   Updated: 2025/11/13 16:16:41 by atomas-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,13 @@ int	ft_toupper(int c)
 		return (c - 32);
 	return (c);
 }
+/* 
+#include <stdio.h>
+
+int main()
+{
+	char	c;
+	c = 'c';
+	printf("%c\n", ft_toupper(c));
+}
+ */
