@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedrosa7704 <pedrosa7704@student.42.fr>    +#+  +:+       +#+        */
+/*   By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 19:15:02 by pedrosa7704       #+#    #+#             */
-/*   Updated: 2025/11/08 21:33:58 by pedrosa7704      ###   ########.fr       */
+/*   Updated: 2025/11/13 16:35:20 by atomas-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,16 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+/* 
+#include <stdio.h>
+
+int main()
+{
+	char *s1 = "12345";
+	char *s2 = "12356";
+
+	printf("Size 3 | %d\n", ft_memcmp(s1, s2, 3));
+	printf("Size 5 | %d\n", ft_memcmp(s1, s2, 5));
+	printf("Size 5 | %d\n", ft_memcmp(s2, s1, 5));
+}
+ */

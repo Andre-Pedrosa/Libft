@@ -6,7 +6,7 @@
 /*   By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 19:30:56 by atomas-p          #+#    #+#             */
-/*   Updated: 2025/11/03 10:59:00 by atomas-p         ###   ########.fr       */
+/*   Updated: 2025/11/13 16:26:19 by atomas-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,15 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	}
 	return (ft_strlen(src));
 }
+/* 
+#include <stdio.h>
+
+int main()
+{
+	char	s[7] = "Castor";
+	char	d[7];
+	
+	printf("%zu\n", ft_strlcpy(d, s, ft_strlen(s) + 1));
+	printf("%s\n", s);
+}
+ */
