@@ -6,7 +6,7 @@
 /*   By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 17:14:52 by atomas-p          #+#    #+#             */
-/*   Updated: 2025/11/12 16:32:22 by atomas-p         ###   ########.fr       */
+/*   Updated: 2025/11/13 15:18:20 by atomas-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,17 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
+/* 
+#include <stdio.h>
+
+int main()
+{
+	char *dst = calloc(10 + 1, sizeof(char));
+	char *src = "0123456789";
+	
+	ft_memcpy(dst, src, 10);
+	printf("%s\n", dst);
+
+	free(dst);
+}
+ */
