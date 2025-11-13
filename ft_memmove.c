@@ -6,7 +6,7 @@
 /*   By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 17:18:44 by atomas-p          #+#    #+#             */
-/*   Updated: 2025/10/22 19:52:30 by atomas-p         ###   ########.fr       */
+/*   Updated: 2025/11/13 14:40:39 by atomas-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,21 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+/* 
+#include <stdio.h>
+
+int main()
+{
+	char *str = malloc(5 + 1);
+
+	ft_strlcpy(str, "abcde", 6);
+
+	printf("String -> %s\n", str);
+	ft_memmove(&str[2], str, 3);
+	printf("String -> %s\n", str);
+	free(str);
+}
+ */
 /*
 +++++++++++++++++++++++++++++++
 | 'a' | 'b' | 'c' | 'd' | 'e' |
