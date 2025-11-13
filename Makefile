@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pedrosa7704 <pedrosa7704@student.42.fr>    +#+  +:+       +#+         #
+#    By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/22 17:15:21 by atomas-p          #+#    #+#              #
-#    Updated: 2025/11/11 07:13:04 by pedrosa7704      ###   ########.fr        #
+#    Updated: 2025/11/13 14:10:31 by atomas-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,37 +22,38 @@ SRC = 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
 BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c\
 		ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c\
 		ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
-		
+
 OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(BONUS:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	ar rcs $@ $^
 
 bonus: $(OBJ) $(BONUS_OBJ)
-	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
-
-%.o: %.c
-	$(CC) $(CFLAGS) -I . -c $< -o $@
-
+	ar rcs $(NAME) $^
+	
 clean:
 	rm -f $(OBJ) $(BONUS_OBJ)
 
-fclean: clean 
+fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re bonus
 
+#leaks: $(SRC) $(BONUS)
+#	$(CC) $(CFLAGS) -g $^ -o leak_check
+#	valgrind --leak-check=full --show-leak-kinds=all ./leak_check
 # Automatic variables used in this Makefile:
 # $@ - the target file name (e.g., the .o or .a file being built)
 # $< - the first prerequisite (e.g., the source .c file being compiled)
 # $^ - all prerequisites (e.g., all object files for the library)
-
-
