@@ -6,7 +6,7 @@
 /*   By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 11:59:37 by atomas-p          #+#    #+#             */
-/*   Updated: 2025/11/13 12:13:47 by atomas-p         ###   ########.fr       */
+/*   Updated: 2025/11/13 14:16:57 by atomas-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	new->next = *lst;
 	*lst = new;
 }
-/* 
+/*
 #include <stdio.h>
 
 static void ft_print_content(void *content)
