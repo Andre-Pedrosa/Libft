@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apedrosa <apedrosa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 19:43:01 by apedrosa          #+#    #+#             */
-/*   Updated: 2022/11/09 19:32:20 by apedrosa         ###   ########.fr       */
+/*   Created: 2025/10/22 17:18:44 by atomas-p          #+#    #+#             */
+/*   Updated: 2025/10/22 19:52:30 by atomas-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*s;
-	char	*d;
-	size_t	i;
+	unsigned char	*d;
+	unsigned char	*s;
+	size_t			i;
 
-	s = (char *)src;
-	d = (char *)dest;
-	i = 0;
 	if (!dest && !src)
-		return (0);
-	if (d > s)
+		return (NULL);
+	i = 0;
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
+	if (dest > src && dest <= src + n - 1)
+	{
 		while (n-- > 0)
 			d[n] = s[n];
+	}
 	else
 	{
 		while (i < n)
@@ -37,11 +39,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	return (dest);
 }
 /*
-int main()
-{
-char csrc[100] = "Geeksfor";
-ft_memmove(csrc+5, csrc, strlen(csrc)+1);
-printf("%s", csrc);
-return 0;
-}
++++++++++++++++++++++++++++++++
+| 'a' | 'b' | 'c' | 'd' | 'e' |
++++++++++++++++++++++++++++++++
+ 0x100 0x101 0x102 0x103 0x104
+
+ Dest = 0x102 Size = 3
+ Src  = 0x100
 */

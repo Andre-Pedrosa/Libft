@@ -3,22 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apedrosa <apedrosa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 20:42:54 by apedrosa          #+#    #+#             */
-/*   Updated: 2022/11/29 20:56:22 by apedrosa         ###   ########.fr       */
+/*   Created: 2025/11/04 13:54:01 by atomas-p          #+#    #+#             */
+/*   Updated: 2025/11/04 15:15:00 by atomas-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (*s)
+	while (s[i])
 	{
-		f(i, s);
+		f(i, &s[i]);
 		i++;
-		s++;
 	}
 }

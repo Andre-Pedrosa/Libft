@@ -3,48 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apedrosa <apedrosa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 17:24:45 by apedrosa          #+#    #+#             */
-/*   Updated: 2022/11/09 19:26:55 by apedrosa         ###   ########.fr       */
+/*   Created: 2025/10/22 17:14:52 by atomas-p          #+#    #+#             */
+/*   Updated: 2025/11/12 16:32:22 by atomas-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char	*s;
-	char	*d;
-	size_t	i;
+	unsigned char	*p_src;
+	unsigned char	*p_dst;
+	size_t			i;
 
-	if (!dest && !src)
-		return (0);
-	s = (char *)src;
-	d = (char *)dest;
+	if (!src && !dst)
+		return (NULL);
 	i = 0;
+	p_src = (unsigned char *)src;
+	p_dst = (unsigned char *)dst;
 	while (i < n)
 	{
-		d[i] = s[i];
+		p_dst[i] = p_src[i];
 		i++;
 	}
-	return (dest);
+	return (dst);
 }
-/*
-int main ()
-{
-	char str1[] = "Geekssss"; 
-	char str2[] = "Quiz"; 
-	
-	puts("str1 before memcpy ");
-	puts(str1);
-	
-
-	ft_memcpy (str1, str2, sizeof(str2));
-	
-	puts("\nstr1 after memcpy ");
-	puts(str1);
-	
-	return 0;
-}
-*/

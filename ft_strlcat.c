@@ -3,39 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apedrosa <apedrosa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pedrosa7704 <pedrosa7704@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 18:11:06 by apedrosa          #+#    #+#             */
-/*   Updated: 2022/11/09 19:29:58 by apedrosa         ###   ########.fr       */
+/*   Created: 2025/10/22 19:58:58 by atomas-p          #+#    #+#             */
+/*   Updated: 2025/11/08 21:37:33 by pedrosa7704      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
+	size_t	dst_len;
 	size_t	i;
-	size_t	j;
-	size_t	destlen;
 
-	destlen = ft_strlen(dest);
-	i = destlen;
-	j = 0;
-	if (dstsize == 0 || dstsize <= destlen)
-		return (ft_strlen(src) + dstsize);
-	while (src[j] && j < dstsize - destlen - 1)
+	i = 0;
+	dst_len = ft_strlen(dst);
+	if (size <= dst_len)
+		return (size + ft_strlen(src));
+	while (src[i] && i + dst_len < size - 1)
 	{
-		dest[i] = src[j];
+		dst[i + dst_len] = src[i];
 		i++;
-		j++;
 	}
-	dest[i] = '\0';
-	return (ft_strlen(src) + destlen);
+	dst[i + dst_len] = '\0';
+	return (ft_strlen(src) + dst_len);
 }
+/* #include <stdio.h>
 
-/*int main()
+int main ()
 {
-	char s1[] = "Hello ";
-	char s2[] = "World";
-	ft_strlcat(s1, s2, 7);
-}*/
+	char 	dst[256];
+	char	src[256];
+
+	ft_memcpy(dst, "Hello", 5);
+	ft_memcpy(src, " World!", 7);
+	printf("Before -> %s\n", dst);
+	ft_strlcat(dst, src, sizeof(dst));
+	printf("After -> %s\n", dst);
+} */

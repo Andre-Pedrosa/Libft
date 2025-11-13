@@ -3,67 +3,64 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apedrosa <apedrosa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pedrosa7704 <pedrosa7704@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 19:37:55 by apedrosa          #+#    #+#             */
-/*   Updated: 2022/11/29 19:53:26 by apedrosa         ###   ########.fr       */
+/*   Created: 2025/11/03 14:04:19 by atomas-p          #+#    #+#             */
+/*   Updated: 2025/11/12 12:40:11 by pedrosa7704      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	negativo(int n)
+static size_t	get_buffer(long ln)
 {
-	if (n < 0)
-		return (-1);
-	return (1);
+	size_t	i;
+
+	i = 0;
+	if (ln < 0)
+	{
+		i++;
+		ln *= -1;
+	}
+	if (ln == 0)
+		return (1);
+	while (ln > 0)
+	{
+		ln /= 10;
+		i++;
+	}
+	return (i);
 }
 
-int	count(long num)
+static void	ft_putnbr_in_str(long ln, char *str)
 {
-	int	char_count;
-
-	char_count = 0;
-	while (num > 0 || (num == 0 && char_count == 0))
+	if (ln < 0)
 	{
-		num /= 10;
-		char_count++;
+		str[0] = '-';
+		ln *= -1;
 	}
-	return (char_count);
+	if (ln >= 10)
+		ft_putnbr_in_str(ln / 10, str);
+	str[ft_strlen(str)] = ln % 10 + 48;
 }
 
 char	*ft_itoa(int n)
 {
-	long	num;
-	char	*ptr;
-	int		char_count;
+	long	ln;
+	char	*str;
 
-	num = (long)n * negativo(n);
-	char_count = count(num);
-	if (negativo(n) == -1)
-		char_count++;
-	ptr = malloc(sizeof(char) * char_count + 1);
-	if (!ptr)
-		return (0);
-	ptr[char_count] = '\0';
-	while (char_count != 0)
-	{
-		if (char_count == 1 && negativo(n) == -1)
-			ptr[char_count - 1] = '-';
-		else
-		{
-			ptr[char_count - 1] = num % 10 + 48;
-			num /= 10;
-		}
-		char_count--;
-	}
-	return (ptr);
+	ln = n;
+	str = ft_calloc(get_buffer(ln) + 1, sizeof(char));
+	if (!str)
+		return (NULL);
+	ft_putnbr_in_str(ln, str);
+	return (str);
 }
-
-// int main()
-// {
-// 	char	*ptr;
-// 	ptr = ft_itoa(42);
-// 	printf("%s", ptr);
-// 	printf("%d", count(42));
-// }
+/* 
+#include <stdio.h>
+	
+int main()
+{	
+	printf("%s\n", ft_itoa(42));
+}
+*/

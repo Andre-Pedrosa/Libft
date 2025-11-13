@@ -3,22 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apedrosa <apedrosa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 18:18:22 by apedrosa          #+#    #+#             */
-/*   Updated: 2022/11/14 18:41:07 by apedrosa         ###   ########.fr       */
+/*   Created: 2025/10/29 11:20:09 by atomas-p          #+#    #+#             */
+/*   Updated: 2025/11/12 17:05:13 by atomas-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	void	*ptr;
+	size_t			i;
+	unsigned char	*ptr;
 
-	ptr = malloc(nmemb * size);
+	i = 0;
+	ptr = malloc(count * size);
 	if (!ptr)
 		return (NULL);
-	ft_bzero(ptr, nmemb * size);
+	while (i < count * size)
+	{
+		ptr[i] = 0;
+		i++;
+	}
 	return (ptr);
 }
+/* 
+#include <stdio.h>
+
+int main()
+{
+	char *str = ft_calloc(3, sizeof(char));
+	
+	ft_memcpy(str, "42", 2);
+	printf("[%s]\n", str);
+}
+ */

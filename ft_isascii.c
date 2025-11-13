@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apedrosa <apedrosa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 11:32:41 by apedrosa          #+#    #+#             */
-/*   Updated: 2022/11/02 20:26:51 by apedrosa         ###   ########.fr       */
+/*   Created: 2025/10/22 17:14:28 by atomas-p          #+#    #+#             */
+/*   Updated: 2025/11/12 17:02:34 by atomas-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,18 @@
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
-	{
 		return (1);
-	}
 	return (0);
 }
+/* 
+#include<stdio.h>
+
+int main()
+{
+	char c = 'a';
+	if (ft_isascii(c))
+		printf("%c is in ascii table\n", c);
+	else
+		printf("%c is not in ascii table\n", c);
+}
+ */

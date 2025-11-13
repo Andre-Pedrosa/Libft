@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apedrosa <apedrosa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pedrosa7704 <pedrosa7704@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 18:57:59 by apedrosa          #+#    #+#             */
-/*   Updated: 2022/11/09 19:30:15 by apedrosa         ###   ########.fr       */
+/*   Created: 2025/10/27 16:41:32 by pedrosa7704       #+#    #+#             */
+/*   Updated: 2025/11/11 07:15:53 by pedrosa7704      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,26 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	char	*last;
 
-	i = ft_strlen(s);
-	while (i >= 0)
+	last = NULL;
+	while (*s)
 	{
-		if (s[i] == (unsigned char)c)
-			return ((char *)&s[i]);
-		i--;
+		if ((unsigned char)*s == (unsigned char)c)
+			last = (char *)s;
+		s++;
 	}
-	return (0);
+	if (*s == (unsigned char)c)
+		return ((char *)s);
+	return (last);
 }
+/* 
+#include <stdio.h>
+
+int main()
+{
+	char	*str = "Castor na 42";
+
+	printf("[%s]\n", ft_strrchr(str, 'a'));
+}
+ */

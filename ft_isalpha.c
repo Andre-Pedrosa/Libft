@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apedrosa <apedrosa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 11:16:33 by apedrosa          #+#    #+#             */
-/*   Updated: 2022/11/03 15:41:54 by apedrosa         ###   ########.fr       */
+/*   Created: 2025/10/22 17:14:10 by atomas-p          #+#    #+#             */
+/*   Updated: 2025/11/12 17:01:50 by atomas-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,19 @@
 
 int	ft_isalpha(int c)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-	{
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
-	}
 	return (0);
 }
+/* 
+#include<stdio.h>
+
+int main()
+{
+	char c = 'a';
+	if (ft_isalpha(c))
+		printf("%c is alpha\n", c);
+	else
+		printf("%c is not alpha\n", c);
+}
+ */

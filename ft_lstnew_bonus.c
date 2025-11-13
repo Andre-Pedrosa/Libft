@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 14:07:35 by atomas-p          #+#    #+#             */
-/*   Updated: 2025/11/04 14:09:12 by atomas-p         ###   ########.fr       */
+/*   Created: 2025/11/13 11:57:52 by atomas-p          #+#    #+#             */
+/*   Updated: 2025/11/13 11:57:58 by atomas-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
+	t_list	*node;
 
-	i = 0;
-	while (s[i])
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node -> content = content;
+	node -> next = NULL;
+	return (node);
 }
+/* 
+#include <stdio.h>
+
+int main()
+{
+	int *n1 = malloc(sizeof(int));
+
+	*n1 = 1;
+
+	t_list *node1 = ft_lstnew(n1);
+
+	printf("[%d]\n", *(int *)node1->content);
+	ft_lstdelone(node1, free);
+}
+ */
