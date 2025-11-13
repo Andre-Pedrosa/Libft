@@ -6,7 +6,7 @@
 /*   By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 13:59:27 by atomas-p          #+#    #+#             */
-/*   Updated: 2025/11/13 15:42:21 by atomas-p         ###   ########.fr       */
+/*   Updated: 2025/11/13 15:42:54 by atomas-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar_fd(char c, int fd)
 	write(fd, &c, 1);
 }
 /* 
-#include <fcntl.h>   // For open flags
+#include <fcntl.h>
 
 int main(void)
 {
