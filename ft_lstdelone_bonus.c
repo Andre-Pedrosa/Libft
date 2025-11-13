@@ -6,10 +6,9 @@
 /*   By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 12:03:23 by atomas-p          #+#    #+#             */
-/*   Updated: 2025/11/13 12:03:24 by atomas-p         ###   ########.fr       */
+/*   Updated: 2025/11/13 12:14:44 by atomas-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
@@ -19,7 +18,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	free(lst);
 }
 /* 
->>>>>>> 42c2952 (Reconnected local repo and added existing files)
 #include <stdio.h>
 
 int main()

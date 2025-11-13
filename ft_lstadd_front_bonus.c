@@ -6,7 +6,7 @@
 /*   By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 11:59:37 by atomas-p          #+#    #+#             */
-/*   Updated: 2025/11/13 12:03:38 by atomas-p         ###   ########.fr       */
+/*   Updated: 2025/11/13 12:13:47 by atomas-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	*lst = new;
 }
 /* 
-#include "libft.h"
-
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
-{
-	del(lst->content);
-	free(lst);
-}
-/* 
->>>>>>> 42c2952 (Reconnected local repo and added existing files)
-#include <stdio.h>
-
-int main()
-{
-	char	*str1 = malloc(2);
-
 #include <stdio.h>
 
 static void ft_print_content(void *content)
