@@ -6,7 +6,7 @@
 /*   By: atomas-p <atomas-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 10:41:55 by atomas-p          #+#    #+#             */
-/*   Updated: 2025/11/12 16:47:58 by atomas-p         ###   ########.fr       */
+/*   Updated: 2025/11/13 15:57:04 by atomas-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,9 @@ int main()
 	char **m;
 	int	i = 0;
 	
-	m = ft_split("Hello!", ' ');
+	m = ft_split("Hello! 42 Castor ", ' ');
 	while (m[i])
 		printf("%s\n", m[i++]);
+	free_m(m, i);
 }
-*/
+ */
